@@ -1,0 +1,1447 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Agenda from '../components/Agenda.svelte';
+import Countdown from "../components/Countdown.svelte";
+import Speakers from '../components/Speakers.svelte';
+
+
+---
+<Layout title="Social Entrepreneurship Conclave 2026 | Kerala Startup Mission">
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+<header id="site-header" class="site-header sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 h-[72px] flex items-center justify-between">
+    <a href="#top" class="flex items-center shrink-0">
+      <img src="/img/logo.svg" class="w-24 md:w-28" alt="Kerala Startup Mission">
+    </a>
+    <nav class="hidden xl:flex items-center gap-6 text-[13px] font-semibold text-body">
+      <a href="#top" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#objectives" class="nav-link">Objectives</a>
+      <a href="#highlights" class="nav-link">Highlights</a>
+      <a href="#speakers" class="nav-link">Speakers</a>
+      <a href="#agenda" class="nav-link">Agenda</a>
+      <a href="#contact" class="nav-link">Contact Us</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank"  class="btn-primary hidden sm:inline-flex">Register Now <span>→</span></a>
+      <button id="mobile-menu-btn" type="button" class="mobile-menu-btn lg:hidden flex" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    <nav class="flex flex-col">
+      <a href="#top" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#objectives" class="mobile-nav-link">Objectives</a>
+      <a href="#highlights" class="mobile-nav-link">Highlights</a>
+      <a href="#speakers" class="mobile-nav-link">Speakers</a>
+      <a href="#agenda" class="mobile-nav-link">Agenda</a>
+      <a href="#contact" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <div class="flex items-center justify-between mt-6 pt-5 border-t border-line">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank"  class="btn-primary">Register Now →</a>
+    </div>
+  </div>
+</header>
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section
+  id="top"
+  class="hero-section relative lg:h-[calc(100svh-80px)] lg:min-h-[650px] lg:py-0 py-20 overflow-hidden"
+>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-glow hero-glow-left"></div>
+  <div class="hero-glow hero-glow-right"></div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative h-full">
+
+    <!-- pb gives space for marquee -->
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center h-full pb-20">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <div class="hero-title-wrap">
+          <p class="hero-kicker pl-1">Social</p>
+          <p class="hero-kicker pl-1">Entrepreneurship</p>
+
+          <h1 class="hero-title">
+            CONCLAVE <span>2026</span>
+          </h1>
+        </div>
+
+        <div class="hero-meta">
+
+          <div class="hero-meta-item">
+            <span class="hero-meta-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <rect x="3" y="5" width="18" height="16" rx="2"/>
+                <path d="M8 3v4M16 3v4M3 10h18"/>
+              </svg>
+            </span>
+
+            <div>
+              <span class="hero-meta-label">Date</span>
+              <strong>30 September 2026</strong>
+            </div>
+          </div>
+
+          <div class="hero-meta-item">
+            <span class="hero-meta-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+            </span>
+
+            <div>
+              <span class="hero-meta-label">Venue</span>
+              <strong>Hyatt Regency Thiruvananthapuram</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 mt-9">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank"  
+            class="btn-primary btn-large"
+          >
+            Register Now <span>→</span>
+          </a>
+
+          <div>
+            <Countdown date="2026-09-30T09:00" client:load />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- RIGHT -->
+      <div
+        class="hero-visual reveal md:px-20 px-5"
+        style="animation-delay:.08s"
+      >
+
+        <div class="ecosystem-panel p-8">
+
+          <span class="ecosystem-label">
+            Bringing together the ecosystem
+          </span>
+
+          <svg viewBox="0 0 320 300" class="ecosystem-graphic">
+
+            <line x1="160" y1="150" x2="160" y2="42"
+              class="eco-link"
+              style="animation-delay:0s"/>
+
+            <line x1="160" y1="150" x2="270" y2="95"
+              class="eco-link"
+              style="animation-delay:.2s"/>
+
+            <line x1="160" y1="150" x2="278" y2="205"
+              class="eco-link"
+              style="animation-delay:.4s"/>
+
+            <line x1="160" y1="150" x2="160" y2="258"
+              class="eco-link"
+              style="animation-delay:.6s"/>
+
+            <line x1="160" y1="150" x2="50" y2="205"
+              class="eco-link"
+              style="animation-delay:.8s"/>
+
+            <line x1="160" y1="150" x2="42" y2="95"
+              class="eco-link"
+              style="animation-delay:1s"/>
+
+
+            <circle
+              cx="160"
+              cy="150"
+              r="30"
+              class="eco-node eco-node-core"
+            />
+
+
+            <g class="eco-node-group">
+              <circle cx="160" cy="42" r="22" class="eco-node"/>
+              <text
+                x="160"
+                y="80"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                Entrepreneurs
+              </text>
+            </g>
+
+
+            <g class="eco-node-group">
+              <circle cx="270" cy="95" r="22" class="eco-node"/>
+              <text
+                x="270"
+                y="133"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                Investors
+              </text>
+            </g>
+
+
+            <g class="eco-node-group">
+              <circle cx="278" cy="205" r="22" class="eco-node"/>
+              <text
+                x="278"
+                y="243"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                NGOs
+              </text>
+            </g>
+
+
+            <g class="eco-node-group">
+              <circle cx="160" cy="258" r="22" class="eco-node"/>
+              <text
+                x="160"
+                y="296"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                Government
+              </text>
+            </g>
+
+
+            <g class="eco-node-group">
+              <circle cx="50" cy="205" r="22" class="eco-node"/>
+              <text
+                x="50"
+                y="243"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                Academia
+              </text>
+            </g>
+
+
+            <g class="eco-node-group">
+              <circle cx="42" cy="95" r="22" class="eco-node"/>
+              <text
+                x="42"
+                y="133"
+                text-anchor="middle"
+                class="eco-node-label"
+              >
+                Women-led
+              </text>
+            </g>
+
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ALWAYS AT BOTTOM OF VISIBLE HERO -->
+  <div class="marquee-section absolute bottom-0 left-0 w-full z-20">
+
+    <div class="marquee-track">
+
+      <div class="marquee-content">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+
+      <div class="marquee-content" aria-hidden="true">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+<section  class=" section-white hidden about">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+    <div class="reveal mb-10">
+      <span class="section-index">01</span>
+      <p class="section-eyebrow">About the Conclave</p>
+      <h2 class="section-title">Social Entrepreneurship Conclave 2026</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div class="reveal">
+        <p class="about-lead">
+          The <strong>Social Entrepreneurship Conclave 2026</strong> is a platform designed to bring together social entrepreneurs, startups, investors, NGOs, government, academia, communities, and ecosystem partners to foster <strong>collaboration, knowledge exchange, mentorship, market access and partnerships</strong>.
+        </p>
+        <div class="about-quote mt-8">
+          <span class="about-quote-mark">"</span>
+          <p>
+            The conclave aims to strengthen the social entrepreneurship ecosystem in Kerala and to create social startups based on technology or product innovation — empowering social and women enterprises to scale their impact and build home-grown global brands from Kerala.
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="animation-delay:.05s">
+        <div class="about-copy-block">
+          <p class="body-copy">
+            The conclave will facilitate knowledge exchange, partnerships, mentor connect, product showcase and market linkages, enabling social enterprises to scale their impact and build home-grown global brands from Kerala.
+          </p>
+          <div class="about-divider"></div>
+          <p class="body-copy">
+            The conclave will launch the <strong class="text-ink">Social Entrepreneurship Programme (SEP)</strong>, which is an incubation programme curated for social entrepreneurs by KSUM. This is a 12-week incubation programme that provides EDPs, mentoring, knowledgeable sessions, market access, funding opportunities etc for social startups.
+          </p>
+          <div class="about-divider"></div>
+          <p class="body-copy">
+            The event will also witness the launch of the <strong class="text-ink">first women startup cell in Kerala</strong> and the release of the <strong class="text-ink">Women Startup Handbook</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about" class=" section-white py-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+
+    <div class="reveal mb-10">
+      <!-- <span class="section-index">01</span> -->
+      <p class="section-eyebrow">About the Conclave</p>
+      <h2 class="section-title">Social Entrepreneurship Conclave 2026</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+      <!-- LEFT COLUMN -->
+      <div class="reveal">
+        <p class="about-lead">
+          The <strong>Social Entrepreneurship Conclave 2026</strong> is a platform designed to bring together social entrepreneurs, startups, investors, NGOs, government, academia, communities, and ecosystem partners to foster
+          <strong>collaboration, knowledge exchange, mentorship, market access and partnerships</strong>.
+        </p>
+        <div class="about-quote mt-12 reveal">
+      <span class="about-quote-mark">"</span>
+
+      <p>
+        The conclave aims to strengthen the social entrepreneurship ecosystem in Kerala and to create social startups based on technology or product innovation — empowering social and women enterprises to scale their impact and build home-grown global brands from Kerala.
+      </p>
+    </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="reveal" style="animation-delay:.05s">
+        <div class="about-copy-block">
+
+          <p class="body-copy">
+            The conclave will facilitate knowledge exchange, partnerships, mentor connect, product showcase and market linkages, enabling social enterprises to scale their impact and build home-grown global brands from Kerala.
+          </p>
+
+          <div class="about-divider"></div>
+
+          <p class="body-copy">
+            The conclave will launch the
+            <strong class="text-ink">Social Entrepreneurship Programme (SEP)</strong>,
+            which is an incubation programme curated for social entrepreneurs by KSUM.
+            This is a 12-week incubation programme that provides EDPs, mentoring,
+            knowledgeable sessions, market access, funding opportunities etc for social startups.
+          </p>
+
+          <div class="about-divider"></div>
+
+          <p class="body-copy">
+            The event will also witness the launch of the
+            <strong class="text-ink">first women startup cell in Kerala</strong>
+            and the release of the
+            <strong class="text-ink">Women Startup Handbook</strong>.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+<!-- =========================================================
+     INITIATIVES
+========================================================= -->
+<section id="initiatives" class=" section-soft initiatives-section py-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative">
+    <div class="section-heading-row reveal">
+      <div>
+        <!-- <span class="section-index">02</span> -->
+        <p class="section-eyebrow">Launching at the Conclave</p>
+        <h2 class="section-title">Three new ecosystem <span class="text-blue">initiatives.</span></h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
+      <article class="initiative-card initiative-blue reveal">
+        <div class="initiative-card-top">
+          <span class="initiative-no">01</span>
+          <span class="initiative-chip">12-week programme</span>
+        </div>
+        <div class="initiative-icon">🚀</div>
+        <div class="initiative-card-body">
+          <span class="initiative-small">Incubation</span>
+          <h3>Social Entrepreneurship Programme (SEP)</h3>
+          <p>
+            An incubation programme curated for social entrepreneurs by KSUM, building a strong and enabling ecosystem for social enterprises in Kerala.
+          </p>
+        </div>
+        <button class="initiative-action" data-initiative-modal="sep">
+          <span>Explore initiative</span>
+          <span class="initiative-arrow">→</span>
+        </button>
+      </article>
+      <article class="initiative-card initiative-orange reveal" style="animation-delay:.05s">
+        <div class="initiative-card-top">
+          <span class="initiative-no">02</span>
+          <span class="initiative-chip">First in Kerala</span>
+        </div>
+        <div class="initiative-icon">👩🏽‍💼</div>
+        <div class="initiative-card-body">
+          <span class="initiative-small">Women Entrepreneurship</span>
+          <h3>Women Startup Cell</h3>
+          <p>
+            A single point of access for women entrepreneurs seeking information on startup support, KSUM schemes and ecosystem resources.
+          </p>
+        </div>
+        <button class="initiative-action" data-initiative-modal="women">
+          <span>Explore initiative</span>
+          <span class="initiative-arrow">→</span>
+        </button>
+      </article>
+      <article class="initiative-card initiative-green reveal" style="animation-delay:.1s">
+        <div class="initiative-card-top">
+          <span class="initiative-no">03</span>
+          <span class="initiative-chip">Malayalam outreach</span>
+        </div>
+        <div class="initiative-icon">📣</div>
+        <div class="initiative-card-body">
+          <span class="initiative-small">Grassroots Outreach</span>
+          <h3>Startup Literacy Campaign</h3>
+          <p>
+            Taking startup awareness, knowledge and opportunities closer to aspiring entrepreneurs across Kerala.
+          </p>
+        </div>
+        <button class="initiative-action" data-initiative-modal="literacy">
+          <span>Explore initiative</span>
+          <span class="initiative-arrow">→</span>
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     INITIATIVE MODAL
+========================================================= -->
+<div id="initiative-modal" class="initiative-modal" aria-hidden="true">
+  <button class="initiative-modal-backdrop" data-modal-close aria-label="Close modal"></button>
+  <div id="initiative-modal-dialog" class="initiative-modal-dialog overflow-y-auto scrollbar-hide" role="dialog" aria-modal="true" aria-labelledby="initiative-modal-title" tabindex="-1">
+    <div class="initiative-modal-header">
+      <div id="initiative-modal-icon" class="initiative-modal-icon">🚀</div>
+      <button type="button" class="initiative-modal-close" data-modal-close aria-label="Close popup">×</button>
+    </div>
+    <div class="initiative-modal-inner">
+      <div class="initiative-modal-tags">
+        <!-- <span id="initiative-modal-number">Initiative 01</span> -->
+        <span id="initiative-modal-badge">12-week programme</span>
+      </div>
+      <h3 id="initiative-modal-title">Social Entrepreneurship Programme</h3>
+      <div id="initiative-modal-body" class="initiative-modal-body"></div>
+    </div>
+  </div>
+</div>
+<!-- =========================================================
+     WHO CAN PARTICIPATE
+========================================================= -->
+<section id="who" class=" section-white py-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+    <div class="section-heading-row reveal">
+      <div>
+        <!-- <span class="section-index">03</span> -->
+        <p class="section-eyebrow">Who Can Participate</p>
+        <h2 class="section-title">Built for the <span class="text-blue">whole ecosystem.</span></h2>
+      </div>
+    </div>
+    <div class="participant-grid mt-14">
+      <article class="participant-card reveal">
+        <span class="participant-number">01</span>
+        <span class="participant-icon"><img src="/img/2026/initiative_4089443.png" class="w-10"></span>
+        <h3>Social Entrepreneurs &amp; Impact Startups</h3>
+      </article>
+      <article class="participant-card reveal" style="animation-delay:.04s">
+        <span class="participant-number">02</span>
+        <span class="participant-icon"><img src="/img/2026/space_16113669.png" class="w-10"></span>
+        <h3>Women Entrepreneurs &amp; Startups</h3>
+      </article>
+      <article class="participant-card reveal" style="animation-delay:.08s">
+        <span class="participant-number">03</span>
+        <span class="participant-icon"><img src="/img/2026/innovation_1967110.png" class="w-10"></span>
+        <h3>Impact Investors &amp; Mentors</h3>
+      </article>
+      <article class="participant-card reveal" style="animation-delay:.12s">
+        <span class="participant-number">04</span>
+        <span class="participant-icon"><img src="/img/2026/world_18814071.png" class="w-10"></span>
+        <h3>NGOs &amp; Communities</h3>
+      </article>
+      <article class="participant-card reveal" style="animation-delay:.16s">
+        <span class="participant-number">05</span>
+        <span class="participant-icon"><img src="/img/2026/service_14430308.png" class="w-10"></span>
+        <h3>Government &amp; Policy Makers</h3>
+      </article>
+      <article class="participant-card reveal" style="animation-delay:.2s">
+        <span class="participant-number">06</span>
+        <span class="participant-icon"><img src="/img/2026/csr_5450186.png" class="w-10"></span>
+        <h3>Ecosystem Partners</h3>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     OBJECTIVES
+========================================================= -->
+<section id="objectives" class="objectives-section">
+  <div class="objective-orbit objective-orbit-one"></div>
+  <div class="objective-orbit objective-orbit-two"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative">
+    <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-14 lg:gap-24">
+      <div class="reveal">
+        <!-- <span class="section-index text-white/50">04</span> -->
+        <p class="text-white text-lg pb-3 font-bold uppercase">Objectives</p>
+        <h2 class="section-titleo text-xl text-[#d8d6d6] pb-10">Creating connections that become <span class="text-yellow">impact.</span></h2>
+      <div class="objective-list reveal" style="animation-delay:.05s">
+        <div class="objective-row">
+          <span>01</span>
+          <div>
+            <h3>Connect</h3>
+            <p>With Changemakers and ecosystem Leaders</p>
+          </div>
+          
+        </div>
+        <div class="objective-row">
+          <span>02</span>
+          <div>
+            <h3>Learn</h3>
+            <p>From inspiring sessions and Networking</p>
+          </div>
+          
+        </div>
+        </div>
+      </div>
+
+      <div class="objective-list reveal" style="animation-delay:.05s">
+        
+        <div class="objective-row">
+          <span>03</span>
+          <div>
+            <h3>Collaborate</h3>
+            <p>With partners and like minded social Entrepreneurs</p>
+          </div>
+          
+        </div>
+        <div class="objective-row">
+          <span>04</span>
+          <div>
+            <h3>Showcase</h3>
+            <p>Innovative solutions creating real social impact</p>
+          </div>
+          
+        </div>
+        <div class="objective-row">
+          <span>05</span>
+          <div>
+            <h3>Sustain</h3>
+            <p>Build a better future through sustainable enterprise</p>
+          </div>
+          
+        </div>
+        <div class="objective-row">
+          <span>06</span>
+          <div>
+            <h3>Empower</h3>
+            <p>Communities and drive inclusive growth</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     HIGHLIGHTS
+========================================================= -->
+<section id="highlights" class=" py-20 section-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+    <div class="section-heading-row reveal">
+      <div>
+        <!-- <span class="section-index">05</span> -->
+        <p class="section-eyebrow">Highlights</p>
+        <h2 class="section-title">What's happening <span class="text-blue">on the day.</span></h2>
+      </div>
+    </div>
+    <div class="highlight-grid mt-14">
+      <div class="highlight-item reveal">
+        <span class="highlight-number">01</span>
+        <div><h3>Launch of the Social Entrepreneurship Conclave<br> 2026</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">02</span>
+        <div><h3>Launch of Social Entrepreneurship Programme</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">03</span>
+        <div><h3>Launch of First edition of Startup Literacy<br> Campaign</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">04</span>
+        <div><h3>Launch of Women Startup Cell</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">05</span>
+        <div><h3>Launch of revised Women Startup Handbook</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">06</span>
+        <div><h3>Interactive Sessions, Master Class and Panel Discussions</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">07</span>
+        <div><h3>Product Expos</h3></div>
+        
+      </div>
+      <div class="highlight-item reveal">
+        <span class="highlight-number">08</span>
+        <div><h3>Product Launch</h3></div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     SPEAKERS
+========================================================= -->
+<section id="speakers" class=" py-20 speakers-section">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+    <div class="section-heading-row reveal mb-8"> <div>
+      <p class="section-eyebrow">Speakers</p> 
+      <h2 class="section-title">Voices shaping 
+        <span class="text-blue">social impact.</span>
+      </h2> 
+    </div> 
+  </div>
+    <Speakers client:load></Speakers>
+  </div>
+</section>
+
+
+<section id="agenda" class="pb-20" >
+  <Agenda client:load></Agenda>
+</section>
+<!-- =========================================================
+     REGISTRATION
+========================================================= -->
+<section id="registration" class="registration-section">
+  <div class="registration-shape registration-shape-one"></div>
+  <div class="registration-shape registration-shape-two"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative">
+    <div class="registration-inner">
+      <div>
+        <span class="registration-label">30 September 2026 · Hyatt Regency Thiruvananthapuram</span>
+        <h2>Join Social Entrepreneurship Conclave 2026 <span>and be part of shaping the future of social entrepreneurship.</span></h2>
+      </div>
+      <div class="registration-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank" class="registration-primary">Register Now <span>→</span></a>
+        <!-- <a href="#" class="registration-secondary">Apply for Product Expo</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+<footer class="border-t border-white/10  py-8 text-black" id="contact">
+  <div
+    class="mx-auto flex max-w-[1180px] items-center justify-between gap-10 px-8
+           max-[760px]:flex-col max-[760px]:items-start
+           max-[640px]:px-5"
+  >
+    <!-- Left: Organization logo only -->
+    <a
+      href="/"
+      aria-label="Kerala Startup Mission"
+      class="flex shrink-0 items-center"
+    >
+      <img
+        src="/img/logo.svg"
+        alt="Kerala Startup Mission"
+        class="h-20 w-auto object-contain max-[480px]:h-11"
+      />
+    </a>
+
+    <!-- Right section -->
+    <div
+      class="flex items-center gap-12
+             max-[760px]:w-full
+             max-[600px]:flex-col
+             max-[600px]:items-start
+             max-[600px]:gap-6"
+    >
+      <!-- Program details -->
+ 
+
+      <!-- Divider -->
+      <div
+        class="h-14 w-px bg-black/15
+               max-[600px]:hidden"
+      ></div>
+
+      <!-- Point of contact -->
+      <div>
+        <span
+          class="hidden mb-2 block  text-[10px]
+                 font-semibold uppercase tracking-[0.14em]
+                 text-[#F5C518]"
+        >
+          Point of Contact
+        </span>
+
+        <p
+          class=" text-sm
+                 font-semibold text-black"
+        >
+          Sachin P V
+        </p>
+        <p class="text-xs">Project Coordinator</p>
+        <a
+          href="mailto:sachin@startupmission.in"
+          class="mt-1 block  text-[11.5px]
+                 text-black transition-colors hover:text-black"
+        >
+          sachin@startupmission.in
+
+        </a>
+
+        <a
+          href="tel:8943087358"
+          class="mt-1 block  text-[11.5px]
+                 text-black transition-colors hover:text-black"
+        >
+          8943087358
+        </a>
+
+
+        
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom copyright -->
+  <div class=" grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-auto mt-7 text-center max-w-[1180px] border-t border-black/10 pt-5 max-[640px]:px-5">
+    <div></div>
+    <div class="">
+      <p class=" text-xs text-black">
+      © 2026 <a href="https://startupmission.kerala.gov.in/" target="_blank">Kerala Startup Mission.</a> All rights reserved.
+      </p>
+    </div>
+    <div class="  gap-3 flex md:items-end md:justify-end">
+        <a
+            href="https://www.linkedin.com/company/kerala-startup-mission/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-black transition-colors hover:text-[#155dfc]"
+            aria-label="LinkedIn"
+        >
+            <i class="fab fa-linkedin-in text-base"></i>
+        </a>
+
+        <a
+            href="https://www.instagram.com/keralastartupmission/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-black transition-colors hover:text-[#155dfc]"
+            aria-label="Instagram"
+        >
+            <i class="fab fa-instagram text-base"></i>
+        </a>
+
+        <a
+            href="https://www.facebook.com/keralastartupmission"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-black transition-colors hover:text-[#155dfc]"
+            aria-label="Facebook"
+        >
+            <i class="fab fa-facebook-f text-base"></i>
+        </a>
+    </div>
+  </div>
+
+</footer>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<button
+  id="scrollToTop"
+  type="button"
+  aria-label="Move to top"
+  class="fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-4
+         items-center justify-center rounded-full border border-white/20
+         bg-[#155DFC]/90 text-white opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.25)]
+         backdrop-blur-md transition-all duration-300
+         hover:-translate-y-1 hover:bg-[#0B1220]
+         focus:outline-none focus:ring-2 focus:ring-white/60
+         pointer-events-none"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="h-5 w-5"
+    aria-hidden="true"
+  >
+    <path d="M18 15l-6-6-6 6"></path>
+  </svg>
+</button>
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+<script>
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    const shouldShow = window.scrollY > 400;
+
+    scrollToTopButton.classList.toggle("opacity-0", !shouldShow);
+    scrollToTopButton.classList.toggle("translate-y-4", !shouldShow);
+    scrollToTopButton.classList.toggle("pointer-events-none", !shouldShow);
+
+    scrollToTopButton.classList.toggle("opacity-100", shouldShow);
+    scrollToTopButton.classList.toggle("translate-y-0", shouldShow);
+    scrollToTopButton.classList.toggle("pointer-events-auto", shouldShow);
+  });
+
+  scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+<script is:inline>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.style.animationPlayState = 'running';
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+  revealEls.forEach((el) => {
+    el.style.animationPlayState = 'paused';
+    revealObserver.observe(el);
+  });
+  const countdownTarget = new Date("2026-09-30T09:00:00+05:30").getTime();
+  function updateCountdown(){
+    let diff = countdownTarget - Date.now();
+    if(diff < 0){
+      diff = 0;
+    }
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    const pad = (value) => String(value).padStart(2,'0');
+    const dayEl = document.getElementById('cd-days');
+    const hourEl = document.getElementById('cd-hours');
+    const minuteEl = document.getElementById('cd-mins');
+    const secondEl = document.getElementById('cd-secs');
+    if(dayEl) dayEl.textContent = pad(days);
+    if(hourEl) hourEl.textContent = pad(hours);
+    if(minuteEl) minuteEl.textContent = pad(minutes);
+    if(secondEl) secondEl.textContent = pad(seconds);
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  const mobileMenuButton = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenuButton.classList.toggle('active');
+    mobileMenu?.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenuButton?.classList.remove('active');
+      mobileMenu?.classList.remove('open');
+    });
+  });
+  document.querySelectorAll('.lang-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang');
+      document.querySelectorAll('.lang-btn').forEach((item) => {
+        item.classList.toggle('active', item.getAttribute('data-lang') === lang);
+      });
+    });
+  });
+  const initiativeData = {
+    sep: {
+      // number: "Initiative 01",
+      badge: "12-week programme",
+      icon: "🚀",
+      theme: "blue",
+      title: "Social Entrepreneurship Programme (SEP)",
+      body: `
+        <p>The conclave will launch the <strong>Social Entrepreneurship Programme (SEP)</strong>, an initiative designed to build a strong and enabling ecosystem for social enterprises in Kerala. It supports purpose-driven entrepreneurs in transforming social and environmental challenges into innovative, sustainable and scalable solutions.</p>
+        <p>SEP aims to position Kerala as a leading destination for social enterprises by enabling access to infrastructure, government support, funding, market opportunities, industry–academia linkages and other ecosystem resources.</p>
+        <div class="modal-feature"><span>✦</span><p>By connecting ideas with opportunities and purpose with scale, SEP will empower social enterprises to create lasting impact, strengthen communities and build home-grown global brands from Kerala.</p></div>
+      `
+    },
+    women: {
+      // number: "Initiative 02",
+      badge: "First in Kerala",
+      icon: "👩🏽‍💼",
+      theme: "orange",
+      title: "Empowering Women Entrepreneurs",
+      body: `
+        <p>A key highlight of the conclave will be the launch of <strong>Kerala's first Women Startup Cell</strong> and the <strong>Women Startup Handbook</strong>.</p>
+        <div class="modal-feature"><span>✦</span><p>The Women Startup Cell will serve as a single point of access for women entrepreneurs seeking information on startup support, KSUM schemes, mentorship, incubation and co-working spaces, labs, and other ecosystem resources.</p></div>
+      `
+    },
+    literacy: {
+      // number: "Initiative 03",
+      badge: "Malayalam outreach",
+      icon: "📣",
+      theme: "green",
+      title: "Taking Startup Literacy Across Kerala",
+      body: `
+        <p>KSUM is expanding women-focused startup initiatives across <strong>Tier 2 and Tier 3 regions</strong> through <strong>Startup Literacy Campaigns in Malayalam</strong>.</p>
+        <div class="modal-feature"><span>✦</span><p>The conclave will mark the launch of the first edition of the Startup Literacy Campaign, bringing startup awareness, knowledge, and opportunities closer to aspiring entrepreneurs across Kerala.</p></div>
+      `
+    }
+  };
+  const initiativeModal = document.getElementById('initiative-modal');
+  const initiativeDialog = document.getElementById('initiative-modal-dialog');
+  const initiativeModalNumber = document.getElementById('initiative-modal-number');
+  const initiativeModalBadge = document.getElementById('initiative-modal-badge');
+  const initiativeModalIcon = document.getElementById('initiative-modal-icon');
+  const initiativeModalTitle = document.getElementById('initiative-modal-title');
+  const initiativeModalBody = document.getElementById('initiative-modal-body');
+  let lastModalFocus = null;
+  function openInitiativeModal(key){
+    const data = initiativeData[key];
+    if(!data || !initiativeModal) return;
+    lastModalFocus = document.activeElement;
+    if(initiativeModalNumber) initiativeModalNumber.textContent = data.number;
+    if(initiativeModalBadge) initiativeModalBadge.textContent = data.badge;
+    if(initiativeModalIcon) initiativeModalIcon.textContent = data.icon;
+    if(initiativeModalTitle) initiativeModalTitle.textContent = data.title;
+    if(initiativeModalBody) initiativeModalBody.innerHTML = data.body;
+    initiativeModal.classList.remove('theme-blue','theme-orange','theme-green');
+    initiativeModal.classList.add(`theme-${data.theme}`);
+    initiativeModal.classList.add('is-open');
+    initiativeModal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(() => {
+      initiativeDialog?.focus();
+    });
+  }
+  function closeInitiativeModal(){
+    if(!initiativeModal) return;
+    initiativeModal.classList.remove('is-open');
+    initiativeModal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+    if(lastModalFocus instanceof HTMLElement){
+      lastModalFocus.focus();
+    }
+  }
+  document.querySelectorAll('[data-initiative-modal]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const key = button.getAttribute('data-initiative-modal');
+      if(key) openInitiativeModal(key);
+    });
+  });
+  document.querySelectorAll('[data-modal-close]').forEach((button) => {
+    button.addEventListener('click', closeInitiativeModal);
+  });
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape' && initiativeModal?.classList.contains('is-open')){
+      closeInitiativeModal();
+    }
+  });
+</script>
+<!-- =========================================================
+     STYLE
+========================================================= -->
+<style is:global>
+  :root{
+    --blue:#155dfc;
+    --blue-deep:#0937a5;
+    --blue-dark:#071c55;
+    --blue-tint:#edf3ff;
+    --blue-soft:#f6f8ff;
+    --orange:#ff6633;
+    --orange-dark:#df4b1d;
+    --orange-soft:#fff1eb;
+    --green:#22c55e;
+    --green-dark:#168a43;
+    --green-soft:#ebfaef;
+    --yellow:#ffd84a;
+    --ink:#0a1020;
+    --body:#596174;
+    --line:#e6e9f1;
+    --soft:#f7f8fb;
+    --white:#ffffff;
+  }
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  body.modal-open{overflow:hidden;}
+  button,a{-webkit-tap-highlight-color:transparent;}
+  button{font:inherit;}
+  .font-display{font-family:'Space Grotesk',sans-serif;}
+  .text-blue{color:var(--blue);}
+  .text-body{color:var(--body);}
+  .text-ink{color:var(--ink);}
+  .border-line{border-color:var(--line);}
+  /* HEADER */
+  .site-header{background:rgba(255,255,255,.88);border-bottom:1px solid rgba(230,233,241,.8);backdrop-filter:blur(18px);transition:box-shadow .2s ease,background .2s ease;}
+  .nav-link{position:relative;transition:.2s ease;}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;border-radius:999px;background:var(--blue);transition:.25s ease;}
+  .nav-link:hover{color:var(--blue);}
+  .nav-link:hover::after{width:100%;}
+  .lang-toggle{align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;}
+  .lang-btn{padding:.4rem .65rem;border-radius:999px;background:transparent;color:var(--body);font-size:10px;font-weight:800;letter-spacing:.04em;}
+  .lang-btn.active{background:var(--blue);color:#fff;}
+  .btn-primary{display:inline-flex;align-items:center;gap:.6rem;padding:.72rem 1.25rem;border-radius:999px;background:var(--orange);color:#fff;font-size:.83rem;font-weight:700;box-shadow:0 7px 18px rgba(255,102,51,.18);transition:transform .2s ease,background .2s ease,box-shadow .2s ease;}
+  .btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 12px 25px rgba(255,102,51,.23);}
+  .btn-secondary{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);color:var(--ink);font-weight:700;border-radius:999px;transition:.2s ease;}
+  .btn-secondary:hover{background:var(--ink);color:#fff;}
+  .btn-large{min-height:52px;padding:.95rem 1.65rem;font-size:.92rem;}
+  /* MOBILE MENU */
+  .mobile-menu-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:999px;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:#fff;}
+  .mobile-menu-btn span{width:17px;height:1.5px;background:var(--ink);transition:.25s ease;}
+  .mobile-menu-btn.active span:first-child{transform:translateY(3.75px) rotate(45deg);}
+  .mobile-menu-btn.active span:last-child{transform:translateY(-3.75px) rotate(-45deg);}
+  .mobile-menu{display:none;padding:1rem 1.5rem 1.5rem;background:#fff;border-top:1px solid var(--line);box-shadow:0 20px 40px rgba(8,15,35,.08);}
+  .mobile-menu.open{display:block;}
+  .mobile-nav-link{padding:.8rem 0;border-bottom:1px solid #f2f3f7;font-size:.95rem;font-weight:650;color:var(--ink);}
+  /* HERO */
+  .hero-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#fafcff 100%);}
+  .hero-grid-pattern{position:absolute;inset:0;opacity:.26;background-image:linear-gradient(rgba(21,93,252,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(21,93,252,.055) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 85%);}
+  .hero-glow{position:absolute;border-radius:999px;filter:blur(85px);pointer-events:none;}
+  .hero-glow-left{width:380px;height:380px;left:-220px;top:80px;background:rgba(21,93,252,.13);}
+  .hero-glow-right{width:420px;height:420px;right:-220px;top:220px;background:rgba(255,102,51,.08);}
+  .hero-kicker{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:650;letter-spacing:.13em;text-transform:uppercase;color:var(--body);}
+  .hero-title{margin:.35rem 0 0;font-family:'Space Grotesk',sans-serif;font-size:clamp(4rem,8.2vw,7.8rem);line-height:.86;letter-spacing:-.07em;font-weight:800;color:var(--ink);}
+  .hero-title span{display:block;color:var(--blue);}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;}
+  .hero-meta-item{display:flex;gap:.8rem;align-items:flex-start;max-width:300px;}
+  .hero-meta-icon{width:36px;height:36px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--blue);background:var(--blue-tint);}
+  .hero-meta-icon svg{width:17px;height:17px;}
+  .hero-meta-label{display:block;margin-bottom:.15rem;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:#9299aa;}
+  .hero-meta strong{display:block;font-size:.85rem;line-height:1.45;font-weight:650;}
+  .hero-visual{position:relative;}
+  .hero-image-wrapper{position:relative;overflow:hidden;border-radius:32px;aspect-ratio:1/.89;border:1px solid rgba(255,255,255,.8);box-shadow:0 30px 70px rgba(9,24,61,.16);}
+  .hero-main-image{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-image-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(3,15,45,.34) 100%);}
+  .floating-date-card{position:absolute;top:22px;left:22px;width:92px;height:112px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(8,20,45,.12);}
+  .floating-date-card strong{font-family:'Space Grotesk',sans-serif;font-size:2.3rem;line-height:1;color:var(--blue);}
+  .date-month,.date-year{font-size:.64rem;font-weight:800;letter-spacing:.14em;color:var(--body);}
+  .date-year{margin-top:.35rem;}
+  .hero-location-pill{position:absolute;left:22px;bottom:22px;display:flex;align-items:center;gap:.5rem;border-radius:999px;padding:.55rem .8rem;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);color:var(--ink);font-size:.72rem;font-weight:700;}
+  .location-dot{width:7px;height:7px;border-radius:999px;background:var(--orange);}
+  .countdown-panel{position:relative;width:88%;margin:-42px auto 0;padding:1.25rem;background:rgba(255,255,255,.97);border:1px solid rgba(231,234,243,.9);border-radius:22px;box-shadow:0 20px 45px rgba(9,24,61,.13);}
+  .countdown-panel-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding-bottom:.95rem;border-bottom:1px solid var(--line);}
+  .countdown-label{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:var(--blue);}
+  .countdown-panel-header p{margin-top:.15rem;font-size:.72rem;color:var(--body);}
+  .countdown-live{display:flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:700;color:var(--green-dark);}
+  .countdown-live span{width:7px;height:7px;border-radius:999px;background:var(--green);box-shadow:0 0 0 4px rgba(34,197,94,.12);}
+  .countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:1rem;}
+  .countdown-item{text-align:center;border-right:1px solid var(--line);}
+  .countdown-item:last-child{border-right:0;}
+  .countdown-item strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2rem);line-height:1;font-weight:750;color:var(--blue);}
+  .countdown-item span{display:block;margin-top:.4rem;font-size:.56rem;text-transform:uppercase;letter-spacing:.08em;color:var(--body);}
+  /* MARQUEE */
+  .marquee-section{overflow:hidden;padding:.9rem 0;background:var(--blue);}
+  .marquee-track{display:flex;width:max-content;animation:marqueeMove 28s linear infinite;}
+  .marquee-content{display:flex;align-items:center;gap:1.7rem;padding-right:1.7rem;}
+  .marquee-content span{color:#fff;font-size:.71rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;}
+  .marquee-content i{width:6px;height:6px;border-radius:999px;background:var(--yellow);}
+  @keyframes marqueeMove{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  /* COMMON SECTIONS */
+  .section{padding:clamp(5.5rem,9vw,8.5rem) 0;}
+  .section-white{background:#fff;}
+  .section-soft{background:var(--soft);}
+  .section-index{display:block;margin-bottom:.8rem;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;color:#9ca4b5;}
+  .section-eyebrow{margin:0 0 .7rem;font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);}
+  .section-title{margin:0;max-width:700px;font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.03;letter-spacing:-.045em;font-weight:720;}
+  .section-titleo{margin:0;max-width:700px;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,3.5rem);line-height:1.03;letter-spacing:-.045em;font-weight:720;}
+
+  .section-heading-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:3rem;align-items:end;}
+  .body-copy{color:var(--body);line-height:1.85;font-size:.96rem;}
+  /* ABOUT */
+  .about-lead{margin:0;font-size:clamp(1rem,2.05vw,1.25rem);line-height:1.5;color:var(--ink);}
+  .about-lead strong{color:var(--blue);}
+  .about-quote{position:relative;margin-top:2rem;padding:2rem 2rem 2rem 3rem;border-radius:20px;background:var(--blue-tint);}
+  .about-quote-mark{position:absolute;left:1rem;top:.4rem;font-family:Georgia,serif;font-size:4.5rem;line-height:1;color:rgba(21,93,252,.18);}
+  .about-quote p{position:relative;margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.05rem,1.8vw,1.3rem);line-height:1.55;font-weight:600;}
+  .about-copy-block{border-top:1px solid var(--line);}
+  .about-copy-block .body-copy{margin:0;padding:1.55rem 0;}
+  .about-copy-block .body-copy:first-child{padding-top:1.45rem;}
+  .about-copy-block strong{font-weight:650;}
+  .about-divider{width:100%;height:1px;background:var(--line);}
+  /* INITIATIVES */
+  .initiatives-section{overflow:hidden;}
+  .initiative-card{--accent:var(--blue);--soft-color:var(--blue-tint);position:relative;min-height:400px;display:flex;flex-direction:column;overflow:hidden;padding:1.8rem;border:1px solid var(--line);border-radius:26px;background:#fff;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+  .initiative-card::after{content:"";position:absolute;width:200px;height:200px;right:-90px;top:-90px;border-radius:999px;background:var(--soft-color);transition:.35s ease;}
+  .initiative-card:hover{transform:translateY(-8px);border-color:color-mix(in srgb,var(--accent) 22%,var(--line));box-shadow:0 25px 60px rgba(16,31,70,.1);}
+  .initiative-card:hover::after{transform:scale(1.15);}
+  .initiative-blue{--accent:var(--blue);--soft-color:var(--blue-tint);}
+  .initiative-orange{--accent:var(--orange);--soft-color:var(--orange-soft);}
+  .initiative-green{--accent:var(--green);--soft-color:var(--green-soft);}
+  .initiative-card-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .initiative-no{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:750;color:var(--accent);letter-spacing:.12em;}
+  .initiative-chip{padding:.4rem .65rem;border-radius:999px;background:var(--soft-color);color:var(--accent);font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;}
+  .initiative-icon{position:relative;z-index:1;width:68px;height:68px;margin-top:2.5rem;border-radius:20px;display:flex;align-items:center;justify-content:center;background:var(--soft-color);font-size:1.8rem;transform:rotate(-3deg);transition:.3s ease;}
+  .initiative-card:hover .initiative-icon{transform:rotate(2deg) scale(1.06);}
+  .initiative-card-body{position:relative;z-index:1;margin-top:2rem;}
+  .initiative-small{display:block;margin-bottom:.55rem;font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);}
+  .initiative-card h3{margin:0;max-width:300px;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.15;letter-spacing:-.03em;font-weight:700;}
+  .initiative-card-body p{margin-top:1rem;color:var(--body);font-size:.88rem;line-height:1.75;}
+  .initiative-action{position:relative;z-index:1;width:100%;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:var(--accent);font-size:.78rem;font-weight:750;text-align:left;}
+  .initiative-arrow{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--soft-color);transition:.25s ease;}
+  .initiative-card:hover .initiative-arrow{background:var(--accent);color:#fff;transform:translateX(3px);}
+  /* MODAL */
+  .initiative-modal{--modal-accent:var(--blue);--modal-soft:var(--blue-tint);position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;pointer-events:none;transition:.25s ease;}
+  .initiative-modal.theme-blue{--modal-accent:var(--blue);--modal-soft:var(--blue-tint);}
+  .initiative-modal.theme-orange{--modal-accent:var(--orange);--modal-soft:var(--orange-soft);}
+  .initiative-modal.theme-green{--modal-accent:var(--green);--modal-soft:var(--green-soft);}
+  .initiative-modal.is-open{opacity:1;visibility:visible;pointer-events:auto;}
+  .initiative-modal-backdrop{position:absolute;inset:0;width:100%;height:100%;background:rgba(4,13,34,.62);backdrop-filter:blur(12px);}
+  .initiative-modal-dialog{position:relative;z-index:1;width:min(720px,100%);max-height:86vh;background:#fff;border-radius:30px;outline:none;box-shadow:0 35px 110px rgba(0,0,0,.28);transform:translateY(20px) scale(.97);opacity:0;transition:.3s ease;}
+  .initiative-modal.is-open .initiative-modal-dialog{transform:translateY(0) scale(1);opacity:1;}
+  .initiative-modal-header{display:flex;align-items:center;justify-content:space-between;padding:2rem 2rem 0;}
+  .initiative-modal-icon{width:70px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:22px;background:var(--modal-soft);font-size:1.8rem;}
+  .initiative-modal-close{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#f3f4f7;color:var(--ink);font-size:1.6rem;line-height:1;transition:.2s ease;}
+  .initiative-modal-close:hover{background:var(--ink);color:#fff;}
+  .initiative-modal-inner{padding:1.8rem 2rem 2.5rem;}
+  .initiative-modal-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;}
+  .initiative-modal-tags span{padding:.42rem .7rem;border-radius:999px;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;}
+  .initiative-modal-tags span:first-child{color:var(--modal-accent);background:var(--modal-soft);}
+  .initiative-modal-tags span:last-child{color:var(--body);border:1px solid var(--line);}
+  .initiative-modal-inner h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.03em;font-weight:720;}
+  .initiative-modal-body{margin-top:1.6rem;color:var(--body);font-size:.92rem;line-height:1.85;}
+  .initiative-modal-body p{margin-bottom:1.05rem;}
+  .initiative-modal-body strong{color:var(--ink);font-weight:650;}
+  .modal-feature{display:flex;gap:.85rem;padding:1.1rem;margin:1.2rem 0;border-radius:16px;background:var(--modal-soft);}
+  .modal-feature span{width:30px;height:30px;flex-shrink:0;border-radius:999px;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--modal-accent);}
+  .modal-feature p{margin:0;color:var(--ink);line-height:1.7;font-weight:550;}
+  /* PARTICIPANTS */
+  .participant-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .participant-card{position:relative;min-height:200px;padding:1.7rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.25s ease;}
+  .participant-card:hover{background:var(--blue-tint);}
+  .participant-number{display:block;font-family:'Space Grotesk',sans-serif;font-size:.68rem;color:#a0a7b8;letter-spacing:.1em;}
+  .participant-icon{display:block;margin-top:2.1rem;font-size:1.7rem;}
+  .participant-card h3{margin:1.1rem 0 0;max-width:260px;font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;line-height:1.35;}
+  /* OBJECTIVES */
+  .objectives-section{position:relative;overflow:hidden;padding:clamp(6rem,10vw,9rem) 0;background:linear-gradient(135deg,var(--blue-deep),var(--blue));}
+  .objective-orbit{position:absolute;border:1px solid rgba(255,255,255,.09);border-radius:999px;}
+  .objective-orbit-one{width:650px;height:650px;left:-320px;bottom:-320px;}
+  .objective-orbit-two{width:450px;height:450px;right:-210px;top:-190px;}
+  .objective-list{border-bottom:1px solid rgba(255,255,255,.2);}
+  .objective-row{display:grid;grid-template-columns:45px 1fr auto;gap:1.2rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid rgba(255,255,255,.18);transition:.25s ease;}
+  .objective-row:hover{padding-left:.8rem;}
+  .objective-row > span{font-size:.64rem;font-weight:700;color:rgba(255,255,255,.45);}
+  .objective-row h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2.4rem);font-weight:650;color:#fff;}
+  .objective-row p{margin-top:.25rem;color:rgba(255,255,255,.65);font-size:.82rem;}
+  .objective-row strong{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.1);color:#fff;}
+  /* HIGHLIGHTS */
+  .highlight-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);}
+  .highlight-item{display:grid;grid-template-columns:40px 1fr auto;gap:1rem;align-items:center;padding:1.65rem 1.8rem 1.65rem 0;border-bottom:1px solid var(--line);transition:.25s ease;}
+  .highlight-item:nth-child(even){padding-left:1.8rem;border-left:1px solid var(--line);}
+  .highlight-item:hover{background:var(--blue-tint);padding-left:1rem;}
+  .highlight-item:nth-child(even):hover{padding-left:2.8rem;}
+  .highlight-number{font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;color:var(--blue);}
+  .highlight-item h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.35;font-weight:650;}
+  .highlight-icon{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--blue-tint);color:var(--blue);}
+  /* SPEAKERS */
+  .speakers-section{background:linear-gradient(180deg,var(--soft),#fff);}
+  .speaker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;}
+  .speaker-card{display:flex;gap:1rem;min-height:150px;padding:1.3rem;border:1px solid var(--line);border-radius:20px;background:#fff;transition:.25s ease;}
+  .speaker-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,32,62,.08);}
+  .speaker-featured{background:linear-gradient(145deg,#fff,var(--blue-tint));}
+  .speaker-photo{width:56px;height:56px;flex-shrink:0;border-radius:999px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--blue-tint);}
+  .speaker-photo span{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:750;color:var(--blue);}
+  .speaker-info{min-width:0;}
+  .speaker-info h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:1rem;line-height:1.35;font-weight:700;}
+  .speaker-info p{margin-top:.45rem;color:var(--body);font-size:.78rem;line-height:1.55;}
+  /* AGENDA */
+  .agenda-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:3rem;}
+  .agenda-date{text-align:right;}
+  .agenda-date span{display:block;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);}
+  .agenda-date strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:3.5rem;line-height:1;color:var(--ink);}
+  .agenda-date p{margin-top:.2rem;font-size:.7rem;color:var(--body);}
+  .agenda-container{border-top:1px solid var(--line);}
+  .agenda-block{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--line);}
+  .agenda-period{padding:2rem 2rem 2rem 0;border-right:1px solid var(--line);}
+  .agenda-period span{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;}
+  .agenda-period p{margin-top:.35rem;font-size:.72rem;color:var(--body);}
+  .agenda-events{padding-left:2rem;}
+  .agenda-event{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid var(--line);}
+  .agenda-event:last-child{border-bottom:0;}
+  .agenda-event time{padding-top:.1rem;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:var(--blue);}
+  .agenda-event h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:1rem;line-height:1.45;font-weight:650;}
+  .agenda-event p{margin-top:.4rem;color:var(--body);font-size:.78rem;line-height:1.65;}
+  .agenda-event-featured{margin:.8rem 0;padding:1.5rem 1.3rem;border:0;border-radius:15px;background:var(--blue-tint);}
+  .agenda-details{margin-top:.8rem;}
+  .agenda-details summary{display:flex;justify-content:space-between;align-items:center;width:max-content;gap:.7rem;list-style:none;cursor:pointer;color:var(--blue);font-size:.7rem;font-weight:700;}
+  .agenda-details summary::-webkit-details-marker{display:none;}
+  .agenda-details summary span{font-size:1rem;transition:.25s ease;}
+  .agenda-details[open] summary span{transform:rotate(45deg);}
+  .agenda-details-body{margin-top:.8rem;padding:.8rem 0 0 1rem;border-left:2px solid var(--blue);}
+  .agenda-details-body p{margin:.3rem 0;font-size:.75rem;}
+  /* REGISTRATION */
+  .registration-section{position:relative;overflow:hidden;padding:clamp(6rem,9vw,8rem) 0;background:var(--blue-dark);}
+  .registration-shape{position:absolute;border-radius:999px;border:1px solid rgba(255,255,255,.08);}
+  .registration-shape-one{width:550px;height:550px;left:-250px;top:-250px;}
+  .registration-shape-two{width:400px;height:400px;right:-180px;bottom:-180px;}
+  .registration-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:end;}
+  .registration-label{display:inline-flex;margin-bottom:1.5rem;padding:.5rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;}
+  .registration-inner h2{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.2;letter-spacing:-.03em;font-weight:700;color:#fff;}
+  .registration-inner h2 span{display:block;margin-top:.5rem;color:rgba(255,255,255,.7);font-size:.55em;font-weight:500;}
+  .registration-actions{min-width:250px;display:flex;flex-direction:column;gap:.8rem;}
+  .registration-primary,.registration-secondary{min-height:54px;padding:.9rem 1.2rem;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.85rem;font-weight:750;transition:.25s ease;}
+  .registration-primary{background:var(--orange);color:#fff;}
+  .registration-primary:hover{background:var(--orange-dark);transform:translateY(-2px);}
+  .registration-secondary{border:1px solid rgba(255,255,255,.35);color:#fff;}
+  .registration-secondary:hover{background:#fff;color:var(--blue-dark);}
+  /* CONTACT */
+  .contact-section{padding:6rem 0;background:#fff;}
+  .contact-card{display:grid;grid-template-columns:1.15fr .85fr;overflow:hidden;border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 60px rgba(18,33,70,.07);}
+  .contact-map{min-height:460px;}
+  .contact-map iframe{width:100%;height:100%;border:0;display:block;}
+  .contact-details{padding:3rem;display:flex;flex-direction:column;justify-content:center;background:var(--soft);}
+  .contact-logo{width:110px;margin-bottom:2rem;}
+  .contact-details h2{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.5vw,3.3rem);line-height:1.1;letter-spacing:-.045em;font-weight:700;}
+  .contact-divider{width:100%;height:1px;margin:2rem 0;background:var(--line);}
+  .contact-person strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.15rem;}
+  .contact-person p{margin-top:.35rem;color:var(--body);font-size:.8rem;line-height:1.6;}
+  .contact-links{display:flex;flex-direction:column;gap:.45rem;margin-top:1.4rem;}
+  .contact-links a{width:max-content;color:var(--blue);font-size:.8rem;font-weight:650;}
+  /* FOOTER */
+  .footer{border-top:1px solid var(--line);background:#fff;}
+  .footer-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+  .footer p{font-size:.72rem;color:var(--body);}
+  .footer-links{display:flex;gap:1.5rem;}
+  .footer-links a{font-size:.7rem;font-weight:650;color:var(--body);}
+  .footer-links a:hover{color:var(--blue);}
+  /* REVEAL */
+  @keyframes revealRise{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .reveal{opacity:0;animation:revealRise .75s cubic-bezier(.2,.7,.3,1) forwards;}
+  /* TABLET */
+  @media(max-width:1024px){
+    .section-heading-row{grid-template-columns:1fr;gap:1.5rem;}
+    .participant-grid{grid-template-columns:repeat(2,1fr);}
+    .speaker-grid{grid-template-columns:repeat(2,1fr);}
+    .registration-inner{grid-template-columns:1fr;gap:2.5rem;}
+    .registration-actions{max-width:320px;}
+    .contact-card{grid-template-columns:1fr;}
+    .contact-map{min-height:360px;}
+  }
+  /* MOBILE */
+  @media(max-width:767px){
+    /* .hero-section{padding-bottom:2rem;} */
+    .hero-title{font-size:clamp(3.4rem,19vw,5rem);}
+    .hero-meta{flex-direction:column;}
+    .hero-image-wrapper{border-radius:24px;aspect-ratio:1/1;}
+    .floating-date-card{top:14px;left:14px;width:76px;height:94px;border-radius:16px;}
+    .floating-date-card strong{font-size:1.9rem;}
+    .hero-location-pill{left:14px;bottom:14px;}
+    .countdown-panel{width:94%;margin-top:-30px;padding:1rem;}
+    .countdown-item strong{font-size:1.3rem;}
+    .countdown-item span{font-size:.48rem;}
+    .section{padding:5.5rem 0;}
+    .section-title{font-size:clamp(2.3rem,11vw,3.2rem);}
+    .about-quote{padding:1.6rem 1.5rem 1.6rem 2.7rem;}
+    .about-copy-block{margin-top:.5rem;}
+    .initiative-card{min-height:360px;}
+    .participant-grid{grid-template-columns:1fr;}
+    .participant-card{min-height:auto;padding:1.4rem;}
+    .objective-row{grid-template-columns:34px 1fr;}
+    .objective-row strong{display:none;}
+    .highlight-grid{grid-template-columns:1fr;}
+    .highlight-item{padding:1.4rem 0;}
+    .highlight-item:nth-child(even){padding-left:0;border-left:0;}
+    .highlight-item:nth-child(even):hover{padding-left:1rem;}
+    .speaker-grid{grid-template-columns:1fr;}
+    .speaker-card{min-height:auto;}
+    .agenda-heading{align-items:flex-start;}
+    .agenda-date strong{font-size:2.7rem;}
+    .agenda-block{grid-template-columns:1fr;}
+    .agenda-period{padding:1.5rem 0;border-right:0;border-bottom:1px solid var(--line);}
+    .agenda-events{padding-left:0;}
+    .agenda-event{grid-template-columns:62px 1fr;gap:.8rem;}
+    .agenda-event-featured{padding:1.2rem 1rem;}
+    .registration-inner h2{font-size:clamp(1.7rem,8vw,2.6rem);}
+    .registration-actions{max-width:none;}
+    .contact-details{padding:2rem 1.5rem;}
+    .contact-map{min-height:300px;}
+    .footer-inner{flex-direction:column;align-items:flex-start;justify-content:center;padding:1.5rem 0;}
+    .footer-links{flex-direction:column;gap:.5rem;}
+    .initiative-modal{padding:0;align-items:flex-end;}
+    .initiative-modal-dialog{width:100%;max-height:90vh;border-radius:26px 26px 0 0;transform:translateY(100%);}
+    .initiative-modal.is-open .initiative-modal-dialog{transform:translateY(0);}
+    .initiative-modal-header{padding:1.5rem 1.4rem 0;}
+    .initiative-modal-inner{padding:1.5rem 1.4rem 2rem;}
+    .initiative-modal-icon{width:58px;height:58px;border-radius:18px;}
+  }
+  .ecosystem-panel{
+  position:relative;
+  /* padding:2rem 1.5rem 1.75rem; */
+  border-radius:32px;
+  background:linear-gradient(160deg,var(--blue-tint),#fff);
+  border:1px solid rgba(21,93,252,.12);
+  box-shadow:0 30px 70px rgba(9,24,61,.08);
+}
+.ecosystem-label{
+  display:block;
+  text-align:center;
+  font-size:.68rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--blue);
+  margin-bottom:.5rem;
+}
+.ecosystem-graphic{ width:100%; height:auto; display:block; }
+.eco-link{
+  stroke:var(--blue);
+  stroke-width:1.5;
+  stroke-dasharray:4 5;
+  opacity:.35;
+  animation:ecoLinkPulse 3s ease-in-out infinite;
+}
+.eco-node{
+  fill:#fff;
+  stroke:var(--blue);
+  stroke-width:2;
+}
+.eco-node-core{
+  fill:var(--blue);
+  stroke:none;
+}
+.eco-node-group{
+  transform-origin:center;
+  /* animation:ecoNodePulse 3s ease-in-out infinite; */
+}
+.eco-node-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  fill:var(--ink);
+}
+.eco-node-label-core{
+  font-size:10px;
+  fill:#fff;
+  font-weight:800;
+}
+@keyframes ecoLinkPulse{ 0%,100%{ opacity:.2 } 50%{ opacity:.6 } }
+@keyframes ecoNodePulse{ 0%,100%{ transform:scale(1) } 50%{ transform:scale(1.08) } }
+
+.launch-checklist{
+  margin-top:1.5rem;
+  padding-top:1.25rem;
+  border-top:1px solid rgba(21,93,252,.14);
+}
+.launch-checklist-label{
+  display:block;
+  font-size:.62rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--blue);
+  margin-bottom:.75rem;
+}
+.launch-check-item{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.4rem 0;
+  font-size:.82rem;
+  font-weight:600;
+  color:var(--ink);
+}
+.launch-check-dot{
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:var(--orange);
+  flex-shrink:0;
+}
+
+.countdown-panel{ margin-top:1.25rem; width:100%; }
+  /* SCROLLBAR */
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:#f4f5f8;}
+  ::-webkit-scrollbar-thumb{background:#c4cad8;border-radius:999px;}
+  ::-webkit-scrollbar-thumb:hover{background:#aeb6c8;}
+  /* REDUCED MOTION */
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important;animation:none !important;transition:none !important;}
+  }
+  /* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</Layout>

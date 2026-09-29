@@ -1,0 +1,29 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/svelte": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "astro": "^1.0.5",
+    "autoprefixer": "^10.4.8",
+    "sass": "^1.54.4",
+    "svelte": "^3.59.2"
+  },
+  "dependencies": {
+    "flowbite": "^3.1.2",
+    "luxon": "^3.3.0",
+    "simplur": "^3.0.1",
+    "svelte-markdown": "^0.2.3",
+    "svelte-swipe": "^1.9.2",
+    "swiper": "^8.3.2",
+    "tailwindcss-scoped-groups": "^2.0.0"
+  }
+}

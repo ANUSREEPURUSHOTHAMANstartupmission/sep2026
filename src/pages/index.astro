@@ -1,0 +1,369 @@
+---
+import Layout from "../layouts/Layout.astro";
+// TODO: replace with the real links
+const applyUrl = "#";
+const base = "https://startupmission.kerala.gov.in";
+const nav = [
+  { label: "Home", href: "/" },
+  { label: "Startups", href: base },
+  { label: "Programs", href: base },
+  { label: "Ecosystem", href: base },
+  { label: "Notifications", href: base },
+  { label: "Search", href: base },
+];
+const cards = [
+  { key: "edp", no: "1", theme: "blue", wide: true, title: "Entrepreneurship Development Programme", summary: "Dedicated Entrepreneurship Development Programmes designed to strengthen the entrepreneurial capabilities of social and rural enterprises through training in idea validation, business planning, financial management, branding, market access and digital enablement." },
+  { key: "ric", no: "2", theme: "orange", title: "Rural Incubation Centres (RIC)", summary: "3 Zonal hubs across North, Central, and South Kerala delivering regional infrastructure, local domain expertise, and industry linkage." },
+  { key: "sip", no: "3", theme: "green", title: "Social Incubation Programme (SIP)", summary: "A structured 6-month intensive cohort programme delivering curated support to 15 potential social/ rural innovators or entrepreneurs who will be fed into an Incubation Programme." },
+  { key: "sprint", no: "4", theme: "blue", title: "Foundational Sprint Course & Evaluation", summary: "A 2-week intensive online/offline boot camp covering Design Thinking, Market Research, and Business Modelling." },
+  { key: "mentor", no: "5", theme: "orange", title: "Incubation Support & Mentorship", summary: "Personalized domain mentorship coordinated by Innovation Ambassadors & sector experts across technical, legal, and business strategies." },
+  { key: "ipr", no: "6", theme: "green", title: "IPR, Tech Transfer & Quality Certification", summary: "Facilitation of Patent filings, Geographical Indications (GI), Technology Transfers, and ZED Quality Certifications." },
+  { key: "fund", no: "7", theme: "gold", wide: true, title: "Phased Funding Support (Up to ₹5 Lakhs)", summary: "Milestone-linked financial grant released in 2-3 installments during the 6-month incubation period." },
+];
+---
+<Layout title="Social Entrepreneurship Programme | Kerala Startup Mission">
+<!-- NAVIGATION -->
+<header id="site-header" class="site-header sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 h-[72px] flex items-center justify-between">
+    <a href="/" class="flex items-center shrink-0"><img src="/img/logo.svg" class="w-24 md:w-28" alt="Kerala Startup Mission"></a>
+    <!-- <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-body">
+      {nav.map((n) => <a href={n.href} class="nav-link">{n.label}</a>)}
+    </nav> -->
+    <div class="flex items-center gap-3">
+      <a href={applyUrl} class="btn-primary hidden sm:inline-flex">Apply <span>→</span></a>
+      <button id="mobile-menu-btn" type="button" class="mobile-menu-btn lg:hidden flex" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu lg:hidden">
+    <nav class="flex flex-col">
+      {nav.map((n) => <a href={n.href} class="mobile-nav-link">{n.label}</a>)}
+    </nav>
+    <div class="mt-6 pt-5 border-t border-line"><a href={applyUrl} class="btn-primary">Apply →</a></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero3">
+  <div class="hero3-dots"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative">
+    <div class="hero3-grid">
+      <div class="hero3-main">
+        <!-- <p class="hero3-eyebrow"><i></i>Kerala Startup Mission</p> -->
+        <h1 class="hero3-title pt-10">Social <br>Entrepreneurship <span>Programme</span></h1>
+        <p class="hero3-lead">Kerala Startup Mission is working towards creating a vibrant and sustainable social entrepreneurship ecosystem in Kerala by enabling enterprises that combine innovation with meaningful social impact.</p>
+        <div class="hero3-actions">
+          <a href={applyUrl} class="btn-primary btn-large">Apply <span>→</span></a>
+          <a href="#overview" class="hero3-link">Program Overview ↓</a>
+        </div>
+      </div>
+      <!-- decorative growth illustration -->
+      <div class="hero3-art" aria-hidden="true">
+        <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="230" cy="230" r="215" stroke="rgba(255,255,255,.14)" stroke-dasharray="3 9"/>
+          <circle cx="230" cy="230" r="160" stroke="rgba(255,255,255,.18)"/>
+          <circle cx="230" cy="230" r="105" fill="rgba(183,227,74,.12)"/>
+          <path d="M230 370V210" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+          <path d="M230 285C230 240 190 215 150 220C150 262 185 290 230 285Z" fill="#22c55e"/>
+          <path d="M230 240C230 195 268 165 312 170C312 215 275 245 230 240Z" fill="#ffd84a"/>
+          <path d="M230 210C230 178 246 150 230 122C214 150 230 178 230 210Z" fill="#fff"/>
+          <path d="M120 372Q230 340 340 372" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="82" cy="150" r="9" fill="#ff6633"/><circle cx="392" cy="120" r="6" fill="#ffd84a"/><circle cx="405" cy="300" r="11" stroke="#22c55e" stroke-width="3"/><circle cx="60" cy="300" r="5" fill="#fff"/>
+        </svg>
+        <span class="float-chip chip-a">3 Zonal Hubs</span>
+        <span class="float-chip chip-b">6-Month Cohort</span>
+        <span class="float-chip chip-c">Up to ₹5 Lakhs</span>
+      </div>
+    </div>
+    <div class="hero3-strip">
+      {cards.map((c) => (
+        <a href={`#card-${c.key}`} class="hero3-tile"><span>{c.no}</span><strong>{c.title}</strong></a>
+      ))}
+    </div>
+  </div>
+  <svg class="hero3-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 80 480 0 720 30S1200 75 1440 25V70H0Z" fill="#fff"/></svg>
+</section>
+
+<!-- PROGRAM OVERVIEW -->
+<section id="overview" class="section-white py-20 overview">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
+    <div class="mb-10">
+      <p class="section-eyebrow"><i></i>Program Overview</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <p class="about-lead">Kerala Startup Mission is working towards creating a vibrant and sustainable social entrepreneurship ecosystem in Kerala by enabling enterprises that combine innovation with meaningful social impact. The Social Entrepreneurship Programme (SEP) provides a structured support system to help social enterprises build capabilities, access incubation and explore pathways for growth.</p>
+      <p class="body-copy">The programme brings together Entrepreneurship Development Programmes(EDP), Rural Incubation Centres(RIC), Social Incubation Programmes,Program Linked Capital support( Upto 5lakhs), CSR and impact investment networks. Through initiatives such as the Impact Investors Network Kerala (IINK) and the Virtual Social Enterprise Facilitation Centre, SEP connects social entrepreneurs with the knowledge, resources, networks and opportunities required to develop sustainable enterprises and create lasting social impact.</p>
+    </div>
+    <div class="mt-10"><a href={applyUrl} class="btn-primary btn-large">Apply <span>→</span></a></div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section id="programs" class="section-soft initiatives-section py-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 relative">
+    <div class="bento">
+      {cards.map((c) => (
+        <article id={`card-${c.key}`} class={`initiative-card initiative-${c.theme} ${c.wide ? "is-wide" : ""}`}>
+          <svg class="card-deco" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="58" stroke="currentColor" stroke-dasharray="2 7"/><circle cx="60" cy="60" r="34" stroke="currentColor"/><circle cx="60" cy="60" r="10" fill="currentColor"/></svg>
+          <span class="initiative-no">{c.no}</span>
+          <h3>{c.title}</h3>
+          <p>{c.summary}</p>
+          <button class="initiative-action" data-initiative-modal={c.key}>
+            <span>View More</span><span class="initiative-arrow">→</span>
+          </button>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="initiative-modal" class="initiative-modal" aria-hidden="true">
+  <button class="initiative-modal-backdrop" data-modal-close aria-label="Close modal"></button>
+  <div id="initiative-modal-dialog" class="initiative-modal-dialog overflow-y-auto scrollbar-hide" role="dialog" aria-modal="true" aria-labelledby="initiative-modal-title" tabindex="-1">
+    <div class="initiative-modal-header">
+      <h3 id="initiative-modal-title"></h3>
+      <button type="button" class="initiative-modal-close" data-modal-close aria-label="Close popup">×</button>
+    </div>
+    <div class="initiative-modal-inner">
+      <div id="initiative-modal-body" class="initiative-modal-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="border-t border-line py-8 text-black" id="contact">
+  <div class="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-8 max-[640px]:flex-col max-[640px]:items-start max-[640px]:px-5">
+    <a href="/" aria-label="Kerala Startup Mission"><img src="/img/logo.svg" alt="Kerala Startup Mission" class="h-16 w-auto object-contain" /></a>
+    <p class="text-xs text-black">© 2026 <a href="https://startupmission.kerala.gov.in/" target="_blank">Kerala Startup Mission.</a> All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scrollToTop" type="button" aria-label="Move to top"
+  class="fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-4 items-center justify-center rounded-full border border-white/20 bg-[#155DFC]/90 text-white opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#0B1220] pointer-events-none">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M18 15l-6-6-6 6"></path></svg>
+</button>
+
+<script>
+  const btn = document.getElementById("scrollToTop");
+  window.addEventListener("scroll", () => {
+    const s = window.scrollY > 400;
+    btn.classList.toggle("opacity-0", !s);
+    btn.classList.toggle("translate-y-4", !s);
+    btn.classList.toggle("pointer-events-none", !s);
+    btn.classList.toggle("opacity-100", s);
+    btn.classList.toggle("translate-y-0", s);
+    btn.classList.toggle("pointer-events-auto", s);
+  });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>
+<script is:inline>
+  const mb = document.getElementById('mobile-menu-btn');
+  const mm = document.getElementById('mobile-menu');
+  mb?.addEventListener('click', () => { mb.classList.toggle('active'); mm?.classList.toggle('open'); });
+
+  const initiativeData = {
+    edp: { theme: "blue", title: "Entrepreneurship Development Programme",
+      body: `<p>Kerala Startup Mission will conduct dedicated Entrepreneurship Development Programmes (EDPs) tailored to the unique needs of social and rural enterprises.</p>
+      <p><em>The EDP curriculum provides structured intervention across five critical dimensions:</em></p>
+      <p><strong>Idea Validation &amp; Impact Assessment:</strong> Assessing whether the venture solves a genuine social, economic, or environmental challenge while verifying local market demand.</p>
+      <p><strong>Financial Management &amp; Sustainability:</strong> Training on basic bookkeeping, unit economics, working capital management, and cost-structure optimization.</p>
+      <p><strong>Branding &amp; Value Proposition:</strong> Developing a distinct brand narrative that communicates both the commercial value and the social impact of the product or service</p>
+      <p><strong>Market Access &amp; Distribution Strategy:</strong> Formulating localized and regional distribution channels, buyer linkage, and procurement strategies.</p>
+      <p><strong>Digital Enablement:</strong> Training founders on digital payment integration, basic e-commerce setups, social media marketing, and ERP tools.</p>` },
+    ric: { theme: "orange", title: "Rural Incubation Centres (RIC)",
+      body: `<h4>A. Regional Hub Architecture</h4>
+      <p>To overcome geographic centralization and bring incubation support directly to grassroots innovators, KSUM facilitates the establishment of three <strong>Zonal Rural Business Incubation Centres (RICs)</strong>:</p>
+      <ul><li><strong>North Zone Rural Incubation Centres (RIC)</strong></li><li><strong>Central Zone Rural Incubation Centres (RIC)</strong></li><li><strong>South Zone Rural Incubation Centres (RIC)</strong></li></ul>
+      <h4>B. Collaborative Operating Framework</h4>
+      <p>Each Rural Incubation Centre operates under a co-location model:</p>
+      <ul><li><strong>Host Partners:</strong> Established in physical partnership with local academic institutions, non-governmental organizations (NGOs), or specialized government facilities with proven expertise in livelihoods, agriculture, or rural development.</li>
+      <li><strong>Resource Optimization:</strong> Rather than incurring capital expenditure on new real estate, RICs utilize existing public infrastructure to optimize public funds, manpower, and operational overheads.</li>
+      <li><strong>Domain-Specific Support:</strong> Delivers specialized workspace, meeting facilities, local testing environments, and hands-on business advisory tailored to regional livelihood strengths</li></ul>` },
+    sip: { theme: "green", title: "Social Incubation Programme (SIP)",
+      body: `<p>A structured 6-month cohort programme providing customized incubation support to 15 selected social and rural startups.</p>
+      <p><strong>Key Features:</strong></p>
+      <ul><li>Tailored approach providing sector-specific interventions for each founder.</li>
+      <li>Guaranteed focus on supporting <strong>women-led social enterprises</strong> per cohort through funding, mentoring, and enterprise development.</li>
+      <li>Dedicated mentor pool of experienced practitioners, sector experts, and impact ecosystem stakeholders.</li>
+      <li>Initial KSUM support team to guide participants through available schemes, connections, and opportunities.</li>
+      <li>Practical exposure including internships with established social enterprises.</li>
+      <li>Leadership development and emotional resilience training tailored to longer scaling timelines.</li></ul>` },
+    sprint: { theme: "blue", title: "Foundational Sprint Course & Evaluation",
+      body: `<ul><li><strong>Delivery:</strong> A 2-week foundational EDP training delivered online and offline in collaboration with expert partner organizations.</li>
+      <li><strong>Core Curriculum:</strong> Introduces fundamental concepts including Design Thinking, Market Research, and Business Modelling.</li>
+      <li><strong>Evaluation &amp; Pitch:</strong> Candidates and their ideas are evaluated for commitment and viability. Startups construct a Business Model Canvas (BMC) or Pitch Deck, which serves as the criteria for identifying grant beneficiaries.</li></ul>` },
+    mentor: { theme: "orange", title: "Incubation Support & Mentorship",
+      body: `<ul><li><strong>Personalized Guidance:</strong> Incubatees receive domain-specific personal mentorship starting within 3 months of enrollment for continuous, context-driven support.</li>
+      <li><strong>Role of Innovation Ambassadors:</strong> Connect incubatees with mentors, domain experts, and external institutions to drive product refinement and scaling.</li>
+      <li><strong>Scope:</strong> Covers Technical refinement, Legal compliance, Branding, Marketing, and Overall Business Strategy.</li></ul>` },
+    ipr: { theme: "green", title: "IPR, Tech Transfer & Quality Certification",
+      body: `<ul><li><strong>IPR &amp; GI Support:</strong> Facilitates Intellectual Property Rights (IPR), Geographical Indications (GI), and technology transfer for social enterprises.</li>
+      <li><strong>Quality Certification Alignment:</strong> Connects startups to state and central schemes that reimburse costs for IPR, technology transfers, or quality benchmarks (e.g., ZED certifications).</li>
+      <li><strong>Product Refinement:</strong> Integrated mentorship and market access support to align product quality with commercial standards.</li></ul>` },
+    fund: { theme: "gold", title: "Phased Funding Support (Up to ₹5 Lakhs)",
+      body: `<ul><li><strong>Grant Allocation:</strong> Performing incubatees receive financial assistance up to ₹5 Lakhs.</li>
+      <li><strong>Instalment Tranches:</strong>
+        <ul><li><strong>1st Instalment:</strong> Released after the first pitch upon completion of the 2-week EDP.</li>
+        <li><strong>2nd Instalment:</strong> Released following an interim performance review at 3 months, linked to defined product development milestones.</li>
+        <li><strong>Final Release:</strong> Disbursed after a final performance review verifying completion of project milestones.</li></ul></li>
+      <li><strong>Market Access Support:</strong> Startups completing product development are supported in initial market access through KSUM networks and buyer programmes.</li></ul>` }
+  };
+  const modal = document.getElementById('initiative-modal');
+  const dialog = document.getElementById('initiative-modal-dialog');
+  let lastFocus = null;
+  function openModal(key){
+    const d = initiativeData[key];
+    if(!d || !modal) return;
+    lastFocus = document.activeElement;
+    document.getElementById('initiative-modal-title').textContent = d.title;
+    document.getElementById('initiative-modal-body').innerHTML = d.body;
+    modal.classList.remove('theme-blue','theme-orange','theme-green','theme-gold');
+    modal.classList.add(`theme-${d.theme}`, 'is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(() => dialog?.focus());
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+    if(lastFocus instanceof HTMLElement) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-initiative-modal]').forEach((b) => b.addEventListener('click', () => openModal(b.getAttribute('data-initiative-modal'))));
+  document.querySelectorAll('[data-modal-close]').forEach((b) => b.addEventListener('click', closeModal));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+</script>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+  :root{--blue:#155dfc;--blue-mid:#3b82f6;--blue-tint:#edf3ff;--orange:#ff6633;--orange-dark:#df4b1d;--orange-soft:#fff1eb;--green:#22c55e;--green-soft:#ebfaef;--gold:#ffd84a;--gold-soft:#fff6cf;--ink:#0a1020;--body:#596174;--line:#e6e9f1;--soft:#f7f8fb;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  body.modal-open{overflow:hidden;}
+  button{font:inherit;cursor:pointer;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+  .text-body{color:var(--body);} .border-line{border-color:var(--line);}
+  .site-header{background:rgba(255,255,255,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(18px);}
+  .nav-link{position:relative;transition:.2s ease;}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:3px;border-radius:999px;background:var(--orange);transition:.25s ease;}
+  .nav-link:hover{color:var(--blue);} .nav-link:hover::after{width:100%;}
+  .btn-primary{display:inline-flex;align-items:center;gap:.6rem;padding:.72rem 1.25rem;border-radius:999px;background:var(--orange);color:#fff;font-size:.83rem;font-weight:700;box-shadow:0 6px 0 var(--orange-dark);transition:.15s ease;}
+  .btn-primary:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--orange-dark);}
+  .btn-large{min-height:52px;padding:.95rem 1.65rem;font-size:.92rem;}
+  .mobile-menu-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:999px;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:#fff;}
+  .mobile-menu-btn span{width:17px;height:1.5px;background:var(--ink);transition:.25s ease;}
+  .mobile-menu-btn.active span:first-child{transform:translateY(3.75px) rotate(45deg);}
+  .mobile-menu-btn.active span:last-child{transform:translateY(-3.75px) rotate(-45deg);}
+  .mobile-menu{display:none;padding:1rem 1.5rem 1.5rem;background:#fff;border-top:1px solid var(--line);box-shadow:0 20px 40px rgba(8,15,35,.08);}
+  .mobile-menu.open{display:block;}
+  .mobile-nav-link{padding:.8rem 0;border-bottom:1px solid #f2f3f7;font-size:.95rem;font-weight:700;color:var(--ink);}
+  /* HERO */
+  .hero3{position:relative;overflow:hidden;padding:clamp(3.5rem,7vw,6rem) 0 7rem;background:linear-gradient(135deg,#0937a5,var(--blue) 70%,var(--blue-mid));color:#fff;}
+  .hero3-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1.2px,transparent 1.2px);background-size:26px 26px;mask-image:linear-gradient(115deg,#000 0,transparent 55%);-webkit-mask-image:linear-gradient(115deg,#000 0,transparent 55%);}
+  .hero3-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;}
+  .hero3-eyebrow{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.4rem;padding:.45rem 1rem;border-radius:999px;background:rgba(255,255,255,.1);font-size:.8rem;font-weight:700;color:#fff;}
+  .hero3-eyebrow i,.section-eyebrow i{width:9px;height:9px;border-radius:50%;background:var(--gold);display:inline-block;}
+  .hero3-title{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.5rem,6vw,5.2rem);line-height:1;letter-spacing:-.04em;font-weight:800;}
+  .hero3-title span{display:inline-block;margin-top:.15em;color:var(--ink);background:var(--gold);padding:0 .22em .06em;border-radius:.18em;transform:rotate(-1.5deg);}
+  .hero3-lead{max-width:600px;margin:1.8rem 0 0;font-size:clamp(.95rem,1.5vw,1.1rem);line-height:1.75;color:rgba(255,255,255,.82);}
+  .hero3-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem;margin-top:2.2rem;}
+  .hero3-link{font-size:.9rem;font-weight:700;color:#fff;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:.2s ease;}
+  .hero3-link:hover{color:var(--gold);}
+  .hero3-art{position:relative;max-width:440px;width:100%;justify-self:center;}
+  .hero3-art svg{width:100%;height:auto;display:block;animation:spinSlow 90s linear infinite;}
+  .hero3-art svg{animation:none;}
+  .float-chip{position:absolute;padding:.5rem .95rem;border-radius:999px;font-size:.78rem;font-weight:700;color:var(--ink);box-shadow:0 10px 24px rgba(0,0,0,.2);animation:bob 5s ease-in-out infinite;}
+  .chip-a{top:8%;left:-4%;background:var(--green);}
+  .chip-b{top:46%;right:-6%;background:#fff;animation-delay:-1.5s;}
+  .chip-c{bottom:10%;left:2%;background:var(--gold);animation-delay:-3s;}
+  @keyframes bob{50%{transform:translateY(-10px);}}
+  .hero3-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:.8rem;margin-top:3.5rem;}
+  .hero3-tile{position:relative;display:flex;flex-direction:column;gap:.7rem;min-height:118px;padding:1rem;border-radius:20px 20px 20px 4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);transition:.2s ease;}
+  .hero3-tile:hover{background:#fff;transform:translateY(-4px) rotate(-1deg);}
+  .hero3-tile span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:.75rem;font-weight:800;}
+  .hero3-tile strong{font-family:'Bricolage Grotesque',sans-serif;font-size:.8rem;line-height:1.35;font-weight:600;color:#fff;}
+  .hero3-tile:hover strong{color:var(--ink);}
+  .hero3-wave{position:absolute;left:0;bottom:-1px;width:100%;height:60px;}
+  @media(max-width:1100px){.hero3-strip{grid-template-columns:repeat(4,1fr);}}
+  @media(max-width:900px){.hero3-grid{grid-template-columns:1fr;}.hero3-art{max-width:300px;}}
+  @media(max-width:640px){.hero3-strip{grid-template-columns:repeat(2,1fr);margin-top:2.5rem;}.hero3-tile{min-height:100px;}.chip-b{right:0;}.chip-a{left:0;}}
+  /* COMMON */
+  .section-white{background:#fff;} .section-soft{background:var(--soft);}
+  .section-eyebrow{display:inline-flex;align-items:center;gap:.6rem;margin:0;padding:.4rem .9rem;border-radius:999px;background:var(--blue-tint);font-size:.82rem;font-weight:700;color:var(--blue);}
+  .overview{position:relative;overflow:hidden;}
+  .overview::before{content:"";position:absolute;width:340px;height:340px;right:-120px;top:-120px;border-radius:50%;border:38px solid var(--green-soft);}
+  .overview::after{content:"";position:absolute;width:120px;height:120px;left:-40px;bottom:30px;border-radius:50%;background:var(--gold-soft);}
+  .overview>div{position:relative;z-index:1;}
+  .body-copy{margin:0;color:var(--body);line-height:1.85;font-size:.96rem;padding-left:1.4rem;border-left:4px solid var(--gold);}
+  .about-lead{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.55;color:var(--ink);font-weight:500;}
+  /* BENTO CARDS */
+  .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+  .initiative-card{--accent:var(--blue);--soft-color:var(--blue-tint);position:relative;min-height:320px;display:flex;flex-direction:column;overflow:hidden;padding:1.8rem;border:2px solid var(--ink);border-radius:28px 28px 28px 6px;background:#fff;box-shadow:6px 6px 0 var(--accent);transition:.2s ease;scroll-margin-top:90px;}
+  .initiative-card:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--accent);}
+  .initiative-blue{--accent:var(--blue);--soft-color:var(--blue-tint);}
+  .initiative-orange{--accent:var(--orange);--soft-color:var(--orange-soft);}
+  .initiative-green{--accent:var(--green);--soft-color:var(--green-soft);}
+  .initiative-gold{--accent:var(--gold);--soft-color:var(--gold-soft);}
+  .is-wide{grid-column:span 2;}
+  .card-deco{position:absolute;width:150px;height:150px;right:-38px;top:-38px;color:var(--accent);opacity:.35;pointer-events:none;transition:.6s ease;}
+  .initiative-card:hover .card-deco{transform:rotate(60deg);}
+  .initiative-no{position:relative;z-index:1;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:800;}
+  .initiative-gold .initiative-no{color:var(--ink);}
+  .initiative-card h3{position:relative;z-index:1;margin:1.5rem 0 0;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.25rem,1.8vw,1.6rem);line-height:1.15;letter-spacing:-.025em;font-weight:700;}
+  .initiative-card p{position:relative;z-index:1;margin:1rem 0 1.5rem;color:var(--body);font-size:.9rem;line-height:1.7;}
+  .initiative-action{position:relative;z-index:1;width:100%;margin-top:auto;padding:1.1rem 0 0;border:0;border-top:2px dashed var(--line);background:none;display:flex;align-items:center;justify-content:space-between;color:var(--ink);font-size:.82rem;font-weight:700;text-align:left;}
+  .initiative-arrow{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--soft-color);border:2px solid var(--ink);transition:.2s ease;}
+  .initiative-card:hover .initiative-arrow{background:var(--ink);color:#fff;transform:translateX(3px);}
+  /* featured wide cards */
+  .initiative-blue.is-wide{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:6px 6px 0 var(--gold);}
+  .initiative-blue.is-wide:hover{box-shadow:3px 3px 0 var(--gold);}
+  .initiative-blue.is-wide h3{color:#fff;font-size:clamp(1.5rem,2.6vw,2.2rem);}
+  .initiative-blue.is-wide p{color:rgba(255,255,255,.82);max-width:600px;}
+  .initiative-blue.is-wide .initiative-no{background:var(--gold);color:var(--ink);}
+  .initiative-blue.is-wide .card-deco{color:var(--gold);}
+  .initiative-blue.is-wide .initiative-action{color:#fff;border-top-color:rgba(255,255,255,.25);}
+  .initiative-blue.is-wide .initiative-arrow{background:transparent;border-color:#fff;}
+  .initiative-gold.is-wide{background:var(--gold);box-shadow:6px 6px 0 var(--ink);}
+  .initiative-gold.is-wide:hover{box-shadow:3px 3px 0 var(--ink);}
+  .initiative-gold.is-wide h3{font-size:clamp(1.5rem,2.6vw,2.2rem);}
+  .initiative-gold.is-wide p{color:#3d3413;}
+  .initiative-gold.is-wide .initiative-no{background:var(--ink);color:var(--gold);}
+  .initiative-gold.is-wide .card-deco{color:var(--ink);}
+  .initiative-gold.is-wide .initiative-action{border-top-color:rgba(13,31,31,.3);}
+  .initiative-gold.is-wide .initiative-arrow{background:#fff;}
+  @media(max-width:1000px){.bento{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:700px){.bento{grid-template-columns:1fr;}.is-wide{grid-column:auto;}.initiative-card{min-height:auto;}}
+  /* MODAL */
+  .initiative-modal{--modal-accent:var(--blue);--modal-soft:var(--blue-tint);position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;pointer-events:none;transition:.25s ease;}
+  .initiative-modal.theme-blue{--modal-accent:var(--blue);}
+  .initiative-modal.theme-orange{--modal-accent:var(--orange);}
+  .initiative-modal.theme-green{--modal-accent:var(--green);}
+  .initiative-modal.theme-gold{--modal-accent:var(--gold);}
+  .initiative-modal.is-open{opacity:1;visibility:visible;pointer-events:auto;}
+  .initiative-modal-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(4,13,34,.62);backdrop-filter:blur(10px);}
+  .initiative-modal-dialog{position:relative;z-index:1;width:min(720px,100%);max-height:86vh;background:#fff;border:2px solid var(--ink);border-top:12px solid var(--modal-accent);border-radius:28px;outline:none;box-shadow:10px 10px 0 var(--modal-accent);transform:translateY(20px) scale(.97);opacity:0;transition:.3s ease;}
+  .initiative-modal.is-open .initiative-modal-dialog{transform:none;opacity:1;}
+  .initiative-modal-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.8rem 2rem 0;}
+  .initiative-modal-header h3{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.15;letter-spacing:-.03em;font-weight:800;}
+  .initiative-modal-close{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);border-radius:50%;background:#fff;color:var(--ink);font-size:1.6rem;line-height:1;transition:.2s ease;}
+  .initiative-modal-close:hover{background:var(--ink);color:#fff;}
+  .initiative-modal-inner{padding:1.5rem 2rem 2.5rem;}
+  .initiative-modal-body{color:var(--body);font-size:.93rem;line-height:1.8;}
+  .initiative-modal-body p{margin:0 0 1rem;}
+  .initiative-modal-body h4{margin:1.2rem 0 .6rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;color:var(--ink);}
+  .initiative-modal-body ul{margin:0 0 1rem;padding-left:1.2rem;list-style:disc;}
+  .initiative-modal-body ul ul{margin:.6rem 0 0;list-style:circle;}
+  .initiative-modal-body li{margin-bottom:.6rem;}
+  .initiative-modal-body li::marker{color:var(--modal-accent);}
+  .initiative-modal-body strong{color:var(--ink);font-weight:700;}
+  @media(max-width:767px){
+    .initiative-modal{padding:0;align-items:flex-end;}
+    .initiative-modal-dialog{width:100%;max-height:90vh;border-radius:26px 26px 0 0;transform:translateY(100%);}
+    .initiative-modal-header{padding:1.4rem 1.4rem 0;}
+    .initiative-modal-inner{padding:1.2rem 1.4rem 2rem;}
+  }
+  ::-webkit-scrollbar{width:9px;} ::-webkit-scrollbar-track{background:#f4f5f8;} ::-webkit-scrollbar-thumb{background:#c4cad8;border-radius:999px;}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto !important;animation:none !important;transition:none !important;}}
+  .scrollbar-hide::-webkit-scrollbar{display:none;} .scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none;}
+</style>
+</Layout>

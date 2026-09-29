@@ -1,0 +1,50 @@
+---
+const { title } = Astro.props;
+
+import Navbar from "../components/Navbar.svelte";
+
+const description = "Kerala Startup Mission is the central agency of the Government of Kerala for entrepreneurship development and incubation activities in Kerala, India.";
+const url = "https://startupmission.kerala.gov.in/";
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Social Entrepreneurship Conclave 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+</head>
+<body class="antialiased">
+		<slot />
+
+    <!-- Vendors JS -->
+    <script src="assets/js/vendor/modernizr-3.11.7.min.js" is:inline></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js" is:inline></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js" is:inline></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins/aos.js" is:inline>
+    </script>
+    <script src="assets/js/plugins/swiper-bundle.min.js" is:inline>
+    </script>
+    <script src="assets/js/plugins/jquery.waypoints.js" is:inline>
+    </script>
+    <script src="assets/js/plugins/jquery.counterup.min.js" is:inline>
+    </script>
+
+
+
+    <!-- Activation JS -->
+    <script src="assets/js/main.js" is:inline></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" is:inline></script>
+
+
+
+</body>
+</html>
